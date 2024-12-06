@@ -43,10 +43,9 @@ AND D.NAME LIKE '%G%'
 OR D.NAME LIKE 'H%'
 ORDER BY D.name DESC;
 
-SELECT * FROM EMPLOYEE E
-WHERE E.department_id IN (3,4)
-AND E.salary > 3000 
-OR E.salary <= 5000
-AND E.birthdate >= DATE '1970-01-31'
-AND E.birthdate <= DATE '1990-10-31';
+SELECT *
+FROM employee
+WHERE department_id IN (3,4)
+  AND salary BETWEEN 3000 AND 5000
+  AND birthdate BETWEEN DATE '1970-01-01' AND DATE '1990-12-31';;
 
