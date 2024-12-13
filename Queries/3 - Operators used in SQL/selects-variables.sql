@@ -22,13 +22,17 @@ OR E.salary = '&SAL' * 2;
 UNDEFINE SAL;
 
 --- Exercise this module ---
-SELECT p.product_id as id, p.product_name as name, p.category,  p.discount
+SELECT 
+    p.product_id as id, 
+    p.product_name as name, 
+    p.price,
+    p.category,  
+    p.discount
 FROM products p
-WHERE p.price > 50
-AND p.category = 'Electronics' 
-OR p.category = 'Appliances'
-AND (p.product_name like '%S'
-OR p.product_name like 'X%')
-AND (p.discount < 10 
-OR p.discount is null)
-ORDER BY p.product_name desc
+WHERE (p.price > 50 AND p.category IN ('Electronics', 'Appliances'))
+    --- LIKE letter% inicial and LIKE %letter final
+    AND (p.product_name like 'S%' OR p.product_name like '%X')
+    AND coalesce(discount, 0) < 10
+ORDER BY 
+    p.price DESC,
+    p.product_name;
