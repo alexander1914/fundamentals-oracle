@@ -89,4 +89,21 @@ HAVING MIN(E.salary) < 2000
    OR MAX(E.salary) > 4000
 ORDER BY MIN(salary) DESC;
 
+--- Coding Exercise: Group Operations
+SELECT 
+    customer_id, 
+    SUM(quantity) AS total_quantity, 
+    AVG(price) AS average_price, 
+    COUNT(*) AS order_count
+FROM orders
+WHERE 
+    customer_id IS NOT NULL
+    AND (product_name = 'Widget A' OR product_name = 'Widget B')
+    AND price < 100
+GROUP BY customer_id
+HAVING 
+    COUNT(order_id) >= 2 
+    AND SUM(quantity) > 20;
+
+
 
