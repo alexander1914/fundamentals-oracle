@@ -52,3 +52,62 @@ IN (
     FROM employee E
     WHERE E.department_id = D.id
 );
+
+-- AS is alias to create your colunm
+SELECT * 
+FROM (
+    SELECT department_id, AVG(salary) AS average_salary
+    FROM employee
+    GROUP BY department_id
+)
+e
+WHERE E.average_salary > 4000;
+
+-- Pratice Challenge Inline Views
+SELECT * 
+FROM (
+    SELECT department_id, MIN(salary) AS MIN_SALARY, MAX(salary) AS MAX_SALARY,
+    AVG(salary) AS average_salary
+    FROM employee
+    GROUP BY department_id
+)
+E
+WHERE E.max_salary > E.min_salary;
+
+-- WITH is a word reserved in sql to combine beetewen queries
+SELECT * 
+FROM 
+(SELECT department_id, AVG(salary) AS average_salary
+    FROM employee
+    GROUP BY department_id
+) E
+WHERE E.average_salary > 4000;
+
+WITH EMP AS (
+    SELECT department_id, AVG(salary) AS average_salary
+    FROM employee
+    GROUP BY 
+        department_id 
+)
+SELECT * FROM EMP E
+WHERE E.average_salary > 4000;
+
+-- Practice Challenge: Subquery Factoring
+SELECT * 
+FROM 
+(SELECT department_id, MIN(salary) AS MIN_SALARY, 
+    MAX(salary) AS MAX_SALARY,AVG(salary) AS average_salary
+    FROM employee
+    GROUP BY department_id
+) E
+WHERE E.max_salary > E.min_salary;
+
+WITH EMP AS (
+    SELECT department_id, MIN(salary) AS MIN_SALARY, 
+    MAX(salary) AS MAX_SALARY,AVG(salary) AS average_salary
+    FROM employee
+    GROUP BY 
+        department_id 
+)
+SELECT * FROM EMP E
+WHERE E.max_salary > E.min_salary;
