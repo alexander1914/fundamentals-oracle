@@ -111,3 +111,35 @@ WITH EMP AS (
 )
 SELECT * FROM EMP E
 WHERE E.max_salary > E.min_salary;
+
+-- The FETCH is a word reserved in sql that retrieves rows of data from the result set of a multi-row query. 
+-- You can fetch rows one at a time, several at a time, or all at once
+
+-- FIRST is a word reserved in sql Both are aggregate and analytic functions that operate on a set of values from a set of rows that,
+-- rank as the FIRST or LAST with respect to a given sorting specification
+
+SELECT * FROM employee e
+ORDER BY e.salary DESC
+FETCH FIRST 5 ROWS ONLY;
+
+SELECT * FROM employee e
+ORDER BY e.salary DESC
+FETCH NEXT 5 ROWS ONLY;
+
+SELECT * FROM employee e
+ORDER BY e.salary DESC
+FETCH FIRST 5 PERCENT ROWS ONLY;
+
+SELECT * FROM employee e
+ORDER BY e.salary DESC
+FETCH FIRST 3 ROWS WITH TIES;
+
+SELECT * FROM employee e
+ORDER BY e.salary DESC
+OFFSET 4 ROWS FETCH FIRST 3 ROWS WITH TIES;
+
+-- Practice Challenge: Subquery Factoring
+SELECT *
+FROM employee
+ORDER BY salary, id
+OFFSET (&page - 1) * 4 ROWS FETCH FIRST 4 ROWS ONLY;
