@@ -122,18 +122,25 @@ SELECT * FROM employee e
 ORDER BY e.salary DESC
 FETCH FIRST 5 ROWS ONLY;
 
+-- ONLY is a word reserved in sql limiting results in SQL queries and defining read-only modes for databases and Oracle homes
 SELECT * FROM employee e
 ORDER BY e.salary DESC
 FETCH NEXT 5 ROWS ONLY;
 
+-- PERCENT is a word reserved in sql to specify the percentage of the total number of selected rows to return. 
+-- percent must be a number or an expression that evaluates to a numeric value
 SELECT * FROM employee e
 ORDER BY e.salary DESC
 FETCH FIRST 5 PERCENT ROWS ONLY;
+
+-- TIES is a word reserved in sql to return additional rows with the same sort key as the last row fetched. 
+-- If you specify WITH TIES, then you must specify the order_by_clause
 
 SELECT * FROM employee e
 ORDER BY e.salary DESC
 FETCH FIRST 3 ROWS WITH TIES;
 
+-- OFFSET is a word reserved in sql clause is used to specify a number N of initial query results that should be skipped (not returned to the application).
 SELECT * FROM employee e
 ORDER BY e.salary DESC
 OFFSET 4 ROWS FETCH FIRST 3 ROWS WITH TIES;
