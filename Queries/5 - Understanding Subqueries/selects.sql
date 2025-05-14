@@ -54,6 +54,7 @@ IN (
 );
 
 -- AS is alias to create your colunm
+-- AVG is function to calcule 
 SELECT * 
 FROM (
     SELECT department_id, AVG(salary) AS average_salary
@@ -74,7 +75,7 @@ FROM (
 E
 WHERE E.max_salary > E.min_salary;
 
--- WITH is a word reserved in sql to combine beetewen queries
+-- WITH: is a word reserved in sql to combine beetewen queries
 SELECT * 
 FROM 
 (SELECT department_id, AVG(salary) AS average_salary
@@ -112,35 +113,35 @@ WITH EMP AS (
 SELECT * FROM EMP E
 WHERE E.max_salary > E.min_salary;
 
--- The FETCH is a word reserved in sql that retrieves rows of data from the result set of a multi-row query. 
+-- The FETCH: is a word reserved in sql that retrieves rows of data from the result set of a multi-row query. 
 -- You can fetch rows one at a time, several at a time, or all at once
 
--- FIRST is a word reserved in sql Both are aggregate and analytic functions that operate on a set of values from a set of rows that,
+-- FIRST: is a word reserved in sql Both are aggregate and analytic functions that operate on a set of values from a set of rows that,
 -- rank as the FIRST or LAST with respect to a given sorting specification
 
 SELECT * FROM employee e
 ORDER BY e.salary DESC
 FETCH FIRST 5 ROWS ONLY;
 
--- ONLY is a word reserved in sql limiting results in SQL queries and defining read-only modes for databases and Oracle homes
+-- ONLY: is a word reserved in sql limiting results in SQL queries and defining read-only modes for databases and Oracle homes
 SELECT * FROM employee e
 ORDER BY e.salary DESC
 FETCH NEXT 5 ROWS ONLY;
 
--- PERCENT is a word reserved in sql to specify the percentage of the total number of selected rows to return. 
+-- PERCENT: is a word reserved in sql to specify the percentage of the total number of selected rows to return. 
 -- percent must be a number or an expression that evaluates to a numeric value
 SELECT * FROM employee e
 ORDER BY e.salary DESC
 FETCH FIRST 5 PERCENT ROWS ONLY;
 
--- TIES is a word reserved in sql to return additional rows with the same sort key as the last row fetched. 
+-- TIES: is a word reserved in sql to return additional rows with the same sort key as the last row fetched. 
 -- If you specify WITH TIES, then you must specify the order_by_clause
 
 SELECT * FROM employee e
 ORDER BY e.salary DESC
 FETCH FIRST 3 ROWS WITH TIES;
 
--- OFFSET is a word reserved in sql clause is used to specify a number N of initial query results that should be skipped (not returned to the application).
+-- OFFSET: is a word reserved in sql clause is used to specify a number N of initial query results that should be skipped (not returned to the application).
 SELECT * FROM employee e
 ORDER BY e.salary DESC
 OFFSET 4 ROWS FETCH FIRST 3 ROWS WITH TIES;
