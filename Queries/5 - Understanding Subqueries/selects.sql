@@ -151,3 +151,28 @@ SELECT *
 FROM employee
 ORDER BY salary, id
 OFFSET (&page - 1) * 4 ROWS FETCH FIRST 4 ROWS ONLY;
+
+-- Coding Exercise: Subqueries
+SELECT category, COUNT(*) AS book_count
+FROM books
+WHERE price > (
+        SELECT AVG(price)
+        FROM books
+    )
+    AND author IS NOT NULL
+GROUP BY category
+HAVING COUNT(*) > 1;
+
+-- Coding Exercise: Subqueries Part 2
+SELECT *
+FROM books
+WHERE category IN (SELECT category
+                    FROM books
+                    WHERE price > (
+                            SELECT AVG(price)
+                            FROM books
+                        )
+                        AND author IS NOT NULL
+                    GROUP BY category
+                    HAVING COUNT(*) > 1)
+ORDER BY price DESC, author;

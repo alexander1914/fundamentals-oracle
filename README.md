@@ -9,7 +9,8 @@ At this moment, I'm currently learning all fundamentals with Oracle
 </span>_**
   
 
-# In oracle sql the functions 
+**In oracle sql the functions**: are built into Oracle Database and are available for use in various appropriate SQL statements.
+
 **_MIN()_**     is a function to show min.
 
 **_MAX()_**     is a function to show max.
