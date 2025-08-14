@@ -44,3 +44,33 @@ FROM DUAL;
 
 --- EXAMPLE ---
 SELECT ROUND(salary/30) FROM employee;
+
+SELECT
+--- SYSDATE is a funtion on oracle that returns the current date and time set for the operating system on which the database server resides. ---
+SYSDATE,
+--- SYSTIMESTAMP is a funtion on oracle that  returns the system date, including fractional seconds and time zone, of the system on which the database resides. ---
+SYSTIMESTAMP,
+--- ADD_MONTHS is a funtion on oracle that  returns the date date plus integer months. ---
+ADD_MONTHS(SYSDATE, 2),
+ADD_MONTHS(SYSDATE, -2),
+--- MONTHS_BETWEEN is a function on oracle that returns number of months between dates date1 and date2. ---
+MONTHS_BETWEEN(SYSDATE, '08/12/2025'),
+MONTHS_BETWEEN(SYSDATE, '08/10/2025'),
+--- EXTRACT is a funtion on oracle that extracts and returns the value of a specified datetime field from a datetime or interval expression. ---
+EXTRACT(YEAR FROM SYSDATE),
+EXTRACT(MONTH FROM SYSDATE),
+EXTRACT(HOUR FROM SYSTIMESTAMP),
+--- NEXT_DAY is a funtion on oracle that returns the date of the first weekday named by char that is later than the date date. ---
+NEXT_DAY(SYSDATE, 'FRIDAY'),
+--- TRUNC is a funtion on oracle that returns n1 truncated to n2 decimal places. If n2 is omitted, then n1 is truncated to 0 places. ---
+TRUNC(SYSDATE),
+TRUNC(SYSDATE, 'hh'),
+TRUNC(SYSDATE, 'month'),
+TRUNC(SYSDATE, 'year')
+FROM DUAL;
+
+--- EXAMPLE ---
+SELECT * 
+FROM DUAL
+WHERE SYSDATE BETWEEN DATE '2025-01-01' 
+AND TO_DATE('2025-08-14 23:59:59', 'YYYY-MM-DD HH24:MI:SS');
