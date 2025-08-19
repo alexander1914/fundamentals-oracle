@@ -28,3 +28,19 @@ At this moment, I'm currently learning all fundamentals with Oracle
 **_NULLIF()_**  is a function return the fields are null.
 
 **_LNNVL()_**   is a function return a boolean similar an if.
+
+**_SUBSTR_**    is a funtion on oracle to work text.
+
+**UPPER_**      is a function on oracle to upper a word or text.
+
+**_LOWER_**     is a function on oracle to lower a word or text.
+
+**_INITCAP_**   is a function on oracle that returns char , with the first letter of each word in uppercase, all other letters in lowercase.
+
+**_REPLACE_**   is a function on oracle to replace a word other text.
+
+**_LENGTH_**    is a function on oracle to count the number caracters of word.
+
+**_CONCAT_**    is a function on oracle to concat two words.
+
+**_TRUNC_**     is a funtion on oracle that returns n1 truncated to n2 decimal places. If n2 is omitted, then n1 is truncated to 0 places.
