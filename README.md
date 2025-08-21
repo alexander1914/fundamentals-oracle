@@ -44,3 +44,27 @@ At this moment, I'm currently learning all fundamentals with Oracle
 **_CONCAT_**    is a function on oracle to concat two words.
 
 **_TRUNC_**     is a funtion on oracle that returns n1 truncated to n2 decimal places. If n2 is omitted, then n1 is truncated to 0 places.
+
+**_ROUND_**     is a function on oracle that rounded to integer places to the right of the decimal point.
+
+**_FLOOR_**     is a function on oracle that returns the largest integer equal to or less than n.
+
+**_CEIL_**      is a funtion on oracle that returns the smallest integer that is greater than or equal to n.
+
+**_SIGN_**      is a funtion on oracle that takes as an argument any numeric data type, or any nonnumeric data type that can be implicitly converted to NUMBER.
+
+**_MOD_**       is a funtion on oracle that returns the remainder of n2 divided by n1.
+
+**_SYSDATE_**   is a funtion on oracle that returns the current date and time set for the operating system on which the database server resides.
+
+**_SYSTIMESTAMP_**   is a funtion on oracle that  returns the system date, including fractional seconds and time zone, of the system on which the database resides.
+
+**_ADD_MONTHS_**     is a funtion on oracle that  returns the date date plus integer months.
+
+**_MONTHS_BETWEEN_** is a function on oracle that returns number of months between dates date1 and date2.
+
+**_EXTRACT_**        is a funtion on oracle that extracts and returns the value of a specified datetime field from a datetime or interval expression.
+
+**_NEXT_DAY_**       is a funtion on oracle that returns the date of the first weekday named by char that is later than the date date.
+
+**_TRUNC_**          is a funtion on oracle that returns n1 truncated to n2 decimal places. If n2 is omitted, then n1 is truncated to 0 places.
