@@ -7,6 +7,9 @@ At this moment, I'm currently learning all fundamentals with Oracle
 **_<span style="color: #1589F0">
     SELECT, AS, FROM, WHERE, AND, OR, ORDER BY, DISTINCT, IN, DESC, ASC, HAVING, LIKE, BETWEEN, IS, NOT, NULL, NULLS, FIRST
 </span>_**
+
+# Create database with intregation Docker Tutorial
+https://medium.com/xp-inc/dica-r%C3%A1pida-criando-base-de-dados-oracle-vers%C3%A3o-21-3-0-no-docker-357b05754b84
   
 
 **In oracle sql the functions**: are built into Oracle Database and are available for use in various appropriate SQL statements.
