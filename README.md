@@ -10,6 +10,19 @@ At this moment, I'm currently learning all fundamentals with Oracle
 
 # Create database with intregation Docker Tutorial
 https://medium.com/xp-inc/dica-r%C3%A1pida-criando-base-de-dados-oracle-vers%C3%A3o-21-3-0-no-docker-357b05754b84
+
+**First** clone the repositories
+
+  git clone https://github.com/oracle/docker-images.git
+
+**Second** go this directory your machine
+
+*cd docker-images/OracleDatabase/SingleInstance/dockerfiles*
+
+**Third** to open o git bash and to execute this command here
+
+  ./buildContainerImage.sh -v 21.3.0 -x
+
   
 
 **In oracle sql the functions**: are built into Oracle Database and are available for use in various appropriate SQL statements.
