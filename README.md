@@ -13,16 +13,23 @@ https://medium.com/xp-inc/dica-r%C3%A1pida-criando-base-de-dados-oracle-vers%C3%
 
 **First** clone the repositories
 
-  git clone https://github.com/oracle/docker-images.git
+    git clone https://github.com/oracle/docker-images.git
 
 **Second** go this directory your machine
 
-*cd docker-images/OracleDatabase/SingleInstance/dockerfiles*
+  *cd docker-images/OracleDatabase/SingleInstance/dockerfiles*
 
 **Third** to open o git bash and to execute this command here
 
-  ./buildContainerImage.sh -v 21.3.0 -x
+    ./buildContainerImage.sh -v 21.3.0 -x
 
+**Fourth** to execute this command to create a container on docker
+
+    docker run --name oracle -d -p 51521:1521 -p 55500:5500 -e ORACLE_PWD=dev1990 -e ORACLE_CHARACTERSET=AL32UTF8 oracle/database:21.3.0-xe
+
+**Fifth** to check the new container for it.
+
+    docker ps
   
 
 **In oracle sql the functions**: are built into Oracle Database and are available for use in various appropriate SQL statements.
