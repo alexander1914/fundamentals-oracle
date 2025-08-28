@@ -74,3 +74,30 @@ SELECT *
 FROM DUAL
 WHERE SYSDATE BETWEEN DATE '2025-01-01' 
 AND TO_DATE('2025-08-14 23:59:59', 'YYYY-MM-DD HH24:MI:SS');
+
+SELECT 
+'['||TO_CHAR(325)||']',
+'['||TO_CHAR(1325,'9,999.999')||']',
+'['||TO_CHAR(1325,'99,999.999')||']',
+'['||TO_CHAR(0.25)||']',
+'['||TO_CHAR(0.25, '00.99')||']',
+'['||TO_CHAR(10.25, '00.99')||']',
+'['||TO_CHAR(1325, '999')||']',
+'['||TO_CHAR(-1325, '9,999')||']',
+'['||TO_CHAR(1325, 'fm9,999')||']',
+'['||TO_CHAR(1325, 'fmL9,999', 'NLS_CURRENCY = ''USD''')||']',
+'['||TO_CHAR(1325, 'fmL9,999')||']',
+TO_NUMBER('$.05', 'L.99'),
+TO_NUMBER('T5' DEFAULT -l ON CONVERSION ERROR, '99'),
+TO_CHAR(SYSDATE, 'day'),
+TO_CHAR(SYSDATE, 'month'),
+TO_CHAR(SYSDATE, 'mm-dd-yyyy "TIME:" hh24:mi:ss'),
+TO_DATE('jun152019', 'monddyyyy'),
+TO_DATE('1990072409', 'yyyyddmmhh24'),
+TO_DATE('1990072409' DEFAULT NULL ON CONVERSION ERROR, 'ddmmyyyyhh24'),
+CAST('jun16-2000 10:10:20' AS DATE, 'mondd-yyyy hh24:mi:ss'),
+CAST(1325 as VARCHAR(50)),
+CAST(SYSDATE as VARCHAR(20)),
+CAST('Q.05' AS NUMBER, 'L.99', 'NLS_CURRENCY = ''Q'''),
+CAST('$.05' AS NUMBER DEFAULT -l ON CONVERSION ERROR, '0.99')
+FROM dual;
