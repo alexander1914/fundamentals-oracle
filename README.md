@@ -91,3 +91,11 @@ https://medium.com/xp-inc/dica-r%C3%A1pida-criando-base-de-dados-oracle-vers%C3%
 **_NEXT_DAY_**       is a funtion on oracle that returns the date of the first weekday named by char that is later than the date date.
 
 **_TRUNC_**          is a funtion on oracle that returns n1 truncated to n2 decimal places. If n2 is omitted, then n1 is truncated to 0 places.
+
+**_TO_CHAR_**        is a function on oracle that (datetime) converts a datetime or interval value of DATE, TIMESTAMP, TIMESTAMP WITH TIME ZONE, TIMESTAMP WITH LOCAL TIME ZONE, INTERVAL DAY TO SECOND, or INTERVAL YEAR TO MONTH data type to a value of VARCHAR2 data type in the format specified by the date format fmt.
+
+**_TO_NUMBER_**      is a function on oracle that onverts expr to a value of NUMBER data type.
+
+**_TO_DATE_**        is a funtion on oracle that converts char to a value of DATE data type.
+
+**_CAST_**           is a funtion on oracle that convert built-in data types or collection-typed values of one type into another built-in data type or collection type.

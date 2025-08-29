@@ -76,6 +76,9 @@ WHERE SYSDATE BETWEEN DATE '2025-01-01'
 AND TO_DATE('2025-08-14 23:59:59', 'YYYY-MM-DD HH24:MI:SS');
 
 SELECT 
+--- TO_CHAR is a function on oracle that (datetime) converts a datetime or interval value of DATE, TIMESTAMP, TIMESTAMP WITH TIME ZONE, 
+--- TIMESTAMP WITH LOCAL TIME ZONE, INTERVAL DAY TO SECOND, 
+--  or INTERVAL YEAR TO MONTH data type to a value of VARCHAR2 data type in the format specified by the date format fmt. ---
 '['||TO_CHAR(325)||']',
 '['||TO_CHAR(1325,'9,999.999')||']',
 '['||TO_CHAR(1325,'99,999.999')||']',
@@ -87,17 +90,25 @@ SELECT
 '['||TO_CHAR(1325, 'fm9,999')||']',
 '['||TO_CHAR(1325, 'fmL9,999', 'NLS_CURRENCY = ''USD''')||']',
 '['||TO_CHAR(1325, 'fmL9,999')||']',
+--- TO_NUMBER is a function on oracle that onverts expr to a value of NUMBER data type. ---
 TO_NUMBER('$.05', 'L.99'),
 TO_NUMBER('T5' DEFAULT -l ON CONVERSION ERROR, '99'),
 TO_CHAR(SYSDATE, 'day'),
 TO_CHAR(SYSDATE, 'month'),
 TO_CHAR(SYSDATE, 'mm-dd-yyyy "TIME:" hh24:mi:ss'),
+--- TO_DATE is a funtion on oracle that converts char to a value of DATE data type. ---
 TO_DATE('jun152019', 'monddyyyy'),
 TO_DATE('1990072409', 'yyyyddmmhh24'),
 TO_DATE('1990072409' DEFAULT NULL ON CONVERSION ERROR, 'ddmmyyyyhh24'),
+--- CAST is a funtion on oracle that convert built-in data types or collection-typed values of one type into another built-in data type or collection type.  ---
 CAST('jun16-2000 10:10:20' AS DATE, 'mondd-yyyy hh24:mi:ss'),
 CAST(1325 as VARCHAR(50)),
 CAST(SYSDATE as VARCHAR(20)),
 CAST('Q.05' AS NUMBER, 'L.99', 'NLS_CURRENCY = ''Q'''),
 CAST('$.05' AS NUMBER DEFAULT -l ON CONVERSION ERROR, '0.99')
 FROM dual;
+
+-- Example --
+SELECT D.*, TO_DATE(D.last_employee_id,'mm')
+FROM DEPARTMENT D
+WHERE VALIDATE_CONVERSION(TO_CHAR(D.last_employee_id) AS DATE, 'mm') = l;
