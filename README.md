@@ -1,5 +1,5 @@
 # Fundamentals Oracle
-At this moment, I'm currently learning all fundamentals with Oracle
+At this moment, I'm currently reviewing more contents about Oracle database like query, procedures and etc.
 
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="40" height="40"/>
 
